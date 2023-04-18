@@ -1,14 +1,6 @@
 @font-face {
-    font-family: poppins;
-    src: url(../fonts/Poppins-Regular.ttf);
-}
-@font-face {
-    font-family: poppinsbold;
-    src: url(../fonts/Poppins-Bold.ttf);
-}
-@font-face {
-    font-family: rollbox;
-    src: url(../fonts/RollboxExtraBold-3zV4X.ttf);
+    font-family: gepeste;
+    src: url(../fonts/Gepestev-nRJgO.ttf);
 }
 
 html{
@@ -16,35 +8,38 @@ html{
     scroll-behavior: smooth;
 }
 *{
-    font-family: poppins,Arial, Helvetica, sans-serif;
+    font-family: gepeste,Arial, Helvetica, sans-serif;
     margin:0;
     padding:0;
     box-sizing: border-box;
+    letter-spacing: 1px;
 }
 h1{
     font-size: 8rem;
-    font-family: rollbox,Arial, Helvetica, sans-serif;
     text-align: center;
+    font-weight: 900;
 }
 h2{
     font-size: 4rem;
-    font-family: poppinsbold,Arial, Helvetica, sans-serif;
+    font-weight: 900;
 }
 h3{
     font-size: 3rem;
+    font-weight: 900;
+    margin-bottom: 3rem;
 }
 p{
-    font-size: 2rem;
+    font-size: 2.4rem;
+    margin-bottom: 2rem;
 }
 nav{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 3rem;
+    gap: 6rem;
 }
-a{
+button{
     text-decoration: none;
-    font-family: rollbox;
     color: white;
     font-size: 3rem;
     border: 2px solid green;
@@ -52,12 +47,18 @@ a{
     border-radius: 1rem;
     background-color: #6bad29;
     transition: ease 0.5s;
+    font-weight: 900;
+    letter-spacing: 6px;
+    cursor: pointer;
 }
-a:hover{
-    background-color:black;
-}
+
 img{
     max-width: 100%;
+}
+main{
+    position: relative;
+    top: -200px;
+    z-index: -1;
 }
 header{
     font-size: 5rem;
@@ -70,7 +71,6 @@ header{
     background-color: rgb(63, 85, 47);
     margin:0 40rem 10rem 40rem;
     border-radius: 0 0 2rem 2rem;
-    box-shadow: 6px 6px 6px green;
 }
 video {
     object-fit: cover;
@@ -96,28 +96,23 @@ video {
     flex-direction: column;
     gap:3rem;
 }
-main{
+.panel{
     background-color: rgb(63, 85, 47);
-    display: flex;    
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+    
     background-color: rgb(63, 85, 47);
     margin:0 40rem 10rem 40rem;
     border-radius: 2rem;
-    box-shadow: 6px 6px 6px green;
+    animation: boxshadow 5s infinite alternate;
     padding: 10rem;
+    color: white;
 }
-
-.maincontent section:target .commands {
+.commands{
+    margin-top:5rem;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     column-gap: 20rem;
     row-gap: 10rem;
     align-items:start;
-}
-.commands{
-    margin-top:10rem;
 }
 .commands article p:last-of-type{
     padding: 2rem;
@@ -125,49 +120,64 @@ main{
     color: black;
     border-radius: 4px;
 }
-/* .maincontent section{
-    visibility: 0;
-    margin-top: 10rem;
+@keyframes boxshadow {
+    25%{box-shadow: 0px 20px 30px green;}
+  50% {box-shadow: 10px 20px 30px green;}
+  75% {box-shadow: 20px 30px 40px green;}
+  100% {box-shadow: 4px 10px 22px green;}
 }
-.maincontent section:target, .maincontent section:target .commands {
-    display: flex;
+.panel { display: none;}
+.show { display: flex;    
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-} */
+    flex-direction: column;  animation-name: example;
+    animation-duration: 1s; animation-iteration-count:1}
+/* .button:hover { cursor: pointer; background-color: #fffff0; } */
+/* The animation code */
+@keyframes example{
+    0% {
+        transform: translateY(-1000px);
+        
+      }
+      100% {
+      }
+}
+@media (max-width: 575.98px) { 
+    .commands{
+        grid-template-columns: repeat(1, 1fr);
 
-main section {
-    display:none;
-    color: white;
+    }
+    h1{
+        font-size: 3rem;
+    }
+    nav{
+        display:grid;
+        grid-template-columns: repeat(1,1fr);
+
+    }
+    header{
+        margin:unset;
+        width: 100vw;
+    }
+    main {
+        position: relative;
+        left: -800px;
+        z-index: -1;
+    }
+    button{
+        font-size: 2rem;
+        text-align: ce;
+    }
+ }
+
+@media (max-width: 767.98px) { 
+    
 }
 
-main section:target{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-main section:target .commands{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    column-gap: 30rem;
-    row-gap: 10rem;
-    align-items: end;
-}
-@keyframes slidein {
-    from {
-      margin-left: 100%;
-      width: 300%;
-    }
-  
-    75% {
-      font-size: 300%;
-      margin-left: 25%;
-      width: 150%;
-    }
-  
-    to {
-      margin-left: 0%;
-      width: 100%;
-    }
-  }
+@media (max-width: 991.98px) { 
+    
+ }
+
+@media (max-width: 1199.98px) { 
+    
+ }
