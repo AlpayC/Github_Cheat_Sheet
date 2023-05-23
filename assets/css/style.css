@@ -51,7 +51,11 @@ button{
     letter-spacing: 6px;
     cursor: pointer;
 }
+button:hover{
+    animation: boxshadow 5s infinite alternate;
+    background-color: green
 
+}
 img{
     max-width: 100%;
 }
@@ -121,9 +125,9 @@ video {
     border-radius: 4px;
 }
 @keyframes boxshadow {
-    25%{box-shadow: 0px 20px 30px green;}
-  50% {box-shadow: 10px 20px 30px green;}
-  75% {box-shadow: 20px 30px 40px green;}
+    25%{box-shadow: 0px 8px 30px green;}
+  50% {box-shadow: 5px -6px 30px green;}
+  75% {box-shadow: 8px 15px 40px green;}
   100% {box-shadow: 4px 10px 22px green;}
 }
 .panel { display: none;}
@@ -132,7 +136,7 @@ video {
     align-items: center;
     flex-direction: column;  animation-name: example;
     animation-duration: 1s; animation-iteration-count:1}
-/* .button:hover { cursor: pointer; background-color: #fffff0; } */
+
 /* The animation code */
 @keyframes example{
     0% {
